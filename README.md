@@ -30,7 +30,7 @@ A native Android app built with Kotlin and Jetpack Compose created by Art Lyndon
 ![Preview](app/screenshots/deletion.gif)
 
 ## To Do list Tab
-![ToDo](app/screenshots/ToDo.png)
+![ToDo](app/screenshots/Todo.png)
 
 ## Language selection
 ![Language](app/screenshots/Language.png)
