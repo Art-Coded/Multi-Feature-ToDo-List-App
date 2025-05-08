@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SweetBakes</string>
+
+    //general
+    <string name="title_characters">An Title dire pwede lumampas sa 18 na karakter!</string>
+    <string name="title_empty">Dire pwede nga Blanko an Title!</string>
+    <string name="title_exist">Mayda kana gadsine na Title</string>
+    <string name="description">Deskripsyon (Optional)</string>
+
+    //Home Dashboard
+    <string name="dashboard_asof1">an imo progresso kay ada na sa </string>
+    <string name="dashboard_asof2">% nga pagkakumpleto!</string>
+    <string name="check_out">Pwede mo ig-check an imo mga gin himo nga orders didi sa </string>
+    <string name="view">Ig-check an imo natapos nga Orders</string>
+    <string name="expanded">Waray ka pa may natapos na Orders :D</string>
+
+    //Home Ingredients Storage
+    <string name="search">Mag-search mga Ingredients...</string>
+    <string name="not_found">Waray Ingredients nga nabilngan para sa </string>
+    <string name="no_ingredients">Waray ka pa may gin butang na Ingredients</string>
+    <string name="name">Ngaran</string>
+    <string name="quantity">Kadamuan</string>
+    <string name="add_ingredient">Magdugang sin Ingredient</string>
+    <string name="ingredient_name">Ngaran san imo Ingredient</string>
+
+    //OrdersUI.kt
+    <string name="no_orders">Waray ka pa Orders sa yana, pinduti an dako nga + button sa ubos san imo screen para maka himo ka sin bago!</string>
+    <string name="edit_order">Editan ine nga Order</string>
+    <string name="orders_today">Orders yana nga Adlaw</string>
+
+    //BottomSheetUI.kt
+    <string name="add_new_order">Magdugang bago na Order</string>
+    <string name="select_priority">Pag pili Prioridad</string>
+    <string name="add_due_date">Magdugang sin Due Date</string>
+    <string name="order_remind_me">Mag butang sin Pahinumdom (Opsyonal)</string>
+
+    //ToDoUI.kt
+    <string name="add_to_do">Magdugang pa sin Hirimuon</string>
+    <string name="edit_to_do">Editan ine nga Hirimuon</string>
+    <string name="middletext">Waray ka pa may gin save na reminders sa yana. Nice!</string>
+    <string name="confirm_deletion">Kumpirmaha an pag Delete</string>
+    <string name="delete_confirmation">Karuyag mo i-Delete an "%1$s"?</string>
+    <string name="remind_me">Hinumdumi ak sa: </string>
+
+    //AddToDo.kt
+    <string name="edit_todo">Bag-uhon an Hirimuon</string>
+    <string name="add_todo">Magdugang sin Hirimuon</string>
+    <string name="edit_your_todo">Bag-uhon an imo Hirimuon</string>
+    <string name="create_new_todo">Mag himo sin bago nga Hirimuon</string>
+    <string name="reminder_time">Oras kun sano ka ig-remind (Opsyonal)</string>
+    <string name="select_time">Pagpili sin Oras</string>
+
+    //SettingsScreen.kt
+    <string name="language">Lingguahe</string>
+    <string name="selected_language">Gin pili nga Lingguahe</string>
+    <string name="choose_language">Pag pili lingguahe</string>
+</resources>

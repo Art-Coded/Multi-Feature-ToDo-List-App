@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SweetBakes</string>
+
+    //general
+    <string name="title_characters">Ang Title hindi pwede lumampas sa 18 na karakter!</string>
+    <string name="title_empty">Hindi maaaring blanko ang iyong Title!</string>
+    <string name="title_exist">Mayroon ka nang ganitong Title</string>
+    <string name="description">Deskripsyon (Optional)</string>
+
+    //Home Dashboard
+    <string name="dashboard_asof1">ang iyong progresso ay nasa </string>
+    <string name="dashboard_asof2">% na pagkakumpleto!</string>
+    <string name="check_out">Tingnan ang iyong mga nakabinbing order dito sa </string>
+    <string name="view">Tingnan ang iyong natapos na Orders</string>
+    <string name="expanded">Wala ka pang may natapos na Orders :D</string>
+
+    //Home Ingredients Storage
+    <string name="search">Mag-search ng mga Ingredients...</string>
+    <string name="not_found">Walang Ingredients na nahanap para sa </string>
+    <string name="no_ingredients">Wala ka pang may inilagay na Ingredients</string>
+    <string name="name">Pangalan</string>
+    <string name="quantity">Kadamihan</string>
+    <string name="add_ingredient">Magdagdag ng Ingredient</string>
+    <string name="ingredient_name">Pangalan ng Ingredient mo</string>
+
+    //OrdersUI.kt
+    <string name="no_orders">Wala ka pang Orders sa ngayon, pindutin mo yung malaking + button sa baba ng screen mo para maka gawa ng bago!</string>
+    <string name="edit_order">Baguhin itong Order</string>
+    <string name="orders_today">Orders ngayong Araw</string>
+
+    //BottomSheetUI.kt
+    <string name="add_new_order">Magdagdag ng bagong Order</string>
+    <string name="select_priority">Pumili ng Prioridad</string>
+    <string name="add_due_date">Magdagdag ng Due Date</string>
+    <string name="order_remind_me">Mag lagay ng Paalala (Opsyonal)</string>
+
+    //ToDoUI.kt
+    <string name="add_to_do">Mag dagdag ng dapat Gawin</string>
+    <string name="edit_to_do">Baguhin itong dapat Gawin</string>
+    <string name="middletext">Wala ka pang may na-saved na reminders sa ngayon. Nice!</string>
+    <string name="confirm_deletion">Kumpirmahin ang pag Delete</string>
+    <string name="delete_confirmation">Gusto mong Burahin ang "%1$s"?</string>
+    <string name="remind_me">Paalala mo sa akin sa: </string>
+
+    //AddToDo.kt
+    <string name="edit_todo">Baguhin ang Gawain</string>
+    <string name="add_todo">Magdagdag ng Gawain</string>
+    <string name="edit_your_todo">Baguhin ang iyong Gagawin</string>
+    <string name="create_new_todo">Gumawa ng bagong dapat Gawin</string>
+    <string name="reminder_time">Oras ng pag-remind (Opsyonal)</string>
+    <string name="select_time">Pumili ng Oras</string>
+
+    //SettingsScreen.kt
+    <string name="language">Wika</string>
+    <string name="selected_language">Napiling Wika</string>
+    <string name="choose_language">Pumili ng Wika</string>
+
+
+</resources>
