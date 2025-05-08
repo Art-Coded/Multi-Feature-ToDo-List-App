@@ -14,8 +14,8 @@ A native Android app built with Kotlin and Jetpack Compose created by Art Lyndon
 - View Orders with sorting, check if finished, and Edit a certain item
 
 ## Home Dashboard + Featuring Light and Dark mode
-![DashboardLight](app/screenshots/HomeDashboard.png)
-![DashboardDark](app/screenshots/Light_DarkMode_feature.png)
+![DashboardLight](app/screenshots/Home_Dashboard.png)
+![DashboardDark](app/screenshots/Light_Darkmode_feature.png)
 
 ## Storage feature
 ![Storage](app/screenshots/Storage.png)
