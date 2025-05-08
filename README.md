@@ -26,7 +26,7 @@ A native Android app built with Kotlin and Jetpack Compose created by Art Lyndon
 ## Orders Tab
 ![Order](app/screenshots/Orders.png)
 
-## SWipe to Delete for easy user experience
+## Swipe to Delete for easy user experience
 ![Preview](app/screenshots/deletion.gif)
 
 ## To Do list Tab
