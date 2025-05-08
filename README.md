@@ -2,7 +2,7 @@
 
 A native Android app built with Kotlin and Jetpack Compose created by Art Lyndone Hemplo.
 
-## Feautres
+## Features
 - Home Dashboard
 - Storage section where you can view your storage ingredients and more
 - Room Database for storing data
