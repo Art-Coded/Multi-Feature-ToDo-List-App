@@ -152,47 +152,25 @@ fun DashboardUI(
 
                     Spacer(modifier = Modifier.width(8.dp))
 
-                    val annotatedText = buildAnnotatedString {
-                        append(context.getString(R.string.check_out))
-                        append(" ")
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
 
-                        val startIndex = length
-                        append("Orders")
-                        val endIndex = length
+                        Spacer(modifier = Modifier.width(8.dp))
 
-                        addStyle(
-                            style = SpanStyle(
-                                color = MaterialTheme.colorScheme.secondary,
-                                textDecoration = TextDecoration.Underline
-                            ),
-                            start = startIndex,
-                            end = endIndex
-                        )
-
-                        addStringAnnotation(
-                            tag = "Orders",
-                            annotation = "navigate_to_orders",
-                            start = startIndex,
-                            end = endIndex
-                        )
-
-                        append(" tab!")
-                    }
-
-                    ClickableText(
-                        text = annotatedText,
-                        style = LocalTextStyle.current.copy(
+                        Text(
+                            text = context.getString(R.string.check_out) + " Orders tab!",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Medium,
-                            color = MaterialTheme.colorScheme.onSurface
-                        ),
-                        onClick = { offset ->
-                            annotatedText.getStringAnnotations(tag = "Orders", start = offset, end = offset)
-                                .firstOrNull()?.let {
-                                    onNavigateToOrders()
-                                }
-                        }
-                    )
+                            color = MaterialTheme.colorScheme.onSurface,
+                            modifier = Modifier.clickable {
+                                onNavigateToOrders()
+                            }
+                        )
+                    }
                 }
             }
         }

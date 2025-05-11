@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -24,17 +25,22 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.DismissDirection
 import androidx.compose.material.DismissValue
-import androidx.compose.material.FractionalThreshold
 import androidx.compose.material.SwipeToDismiss
 import androidx.compose.material.rememberDismissState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalConfiguration
 import com.example.sweetbakes.R
 import com.example.sweetbakes.data.IngredientEntity
+import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Defaults
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun RestockUI(viewModel: RestockViewModel) {
+    val configuration = LocalConfiguration.current
+    val isPortrait = configuration.screenHeightDp > configuration.screenWidthDp
+
     val infiniteTransition = rememberInfiniteTransition()
     val shakeAnimation by infiniteTransition.animateFloat(
         initialValue = -10f,
@@ -69,9 +75,14 @@ fun RestockUI(viewModel: RestockViewModel) {
         }
     }
 
+    val scrollState = rememberScrollState()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .then(
+                if (!isPortrait) Modifier.verticalScroll(scrollState) else Modifier
+            )
             .padding(16.dp)
     ) {
         Row(
@@ -147,7 +158,10 @@ fun RestockUI(viewModel: RestockViewModel) {
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        LazyColumn(modifier = Modifier.weight(1f)) {
+        LazyColumn(
+            modifier = Modifier.weight(1f, fill = isPortrait),
+            verticalArrangement = Arrangement.spacedBy(2.dp)
+        ) {
             if (filteredIngredients.isEmpty()) {
                 item {
                     Text(
@@ -167,56 +181,49 @@ fun RestockUI(viewModel: RestockViewModel) {
                                 viewModel.setIngredientToDelete(ingredient)
                                 viewModel.showDeleteDialog()
                                 false
-                            } else {
-                                false
-                            }
+                            } else false
                         }
                     )
 
                     SwipeToDismiss(
                         state = dismissState,
                         directions = setOf(DismissDirection.EndToStart),
-                        dismissThresholds = { FractionalThreshold(0.5f) },
                         background = {
+                            val color = when (dismissState.dismissDirection) {
+                                DismissDirection.EndToStart -> Color.Red
+                                else -> Color.Transparent
+                            }
+
                             Box(
                                 modifier = Modifier
                                     .fillMaxSize()
-                                    .clip(RoundedCornerShape(16.dp))
-                                    .background(Color.Red)
-                                    .padding(8.dp),
+                                    .background(color)
+                                    .padding(horizontal = 20.dp),
                                 contentAlignment = Alignment.CenterEnd
                             ) {
                                 Icon(
                                     imageVector = Icons.Default.Delete,
                                     contentDescription = "Delete",
-                                    tint = Color.White,
-                                    modifier = Modifier.padding(16.dp)
+                                    tint = Color.White
                                 )
                             }
+                        },
+                        dismissContent = {
+                            IngredientItem(
+                                ingredient = ingredient,
+                                onQuantityChange = { newQuantity ->
+                                    viewModel.updateIngredientQuantity(ingredient, newQuantity)
+                                },
+                                showEditIcon = showEditMode,
+                                onEditClick = {
+                                    viewModel.setIngredientToEdit(ingredient)
+                                    viewModel.setEditName(ingredient.name)
+                                    viewModel.setEditQuantity(ingredient.quantity.toString())
+                                    viewModel.showEditDialog()
+                                }
+                            )
                         }
-                    ) {
-                        IngredientItem(
-                            ingredient = ingredient,
-                            onQuantityChange = { newQuantity ->
-                                viewModel.updateIngredientQuantity(ingredient, newQuantity)
-                            },
-                            showEditIcon = showEditMode,
-                            onEditClick = {
-                                viewModel.setIngredientToEdit(ingredient)
-                                viewModel.setEditName(ingredient.name)
-                                viewModel.setEditQuantity(ingredient.quantity.toString())
-                                viewModel.showEditDialog()
-                            }
-                        )
-                    }
-
-                    if (ingredient != filteredIngredients.last()) {
-                        Divider(
-                            color = Color.Gray,
-                            thickness = 1.dp,
-                            modifier = Modifier.fillMaxWidth()
-                        )
-                    }
+                    )
                 }
             }
         }
@@ -393,7 +400,7 @@ fun IngredientItem(
     Card(
         modifier = Modifier
             .fillMaxWidth(),
-        shape = MaterialTheme.shapes.small,
+        shape = MaterialTheme.shapes.small.copy(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
         Row(

@@ -12,6 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -33,8 +34,9 @@ fun Home(
     val tabs = listOf("Dashboard", "Ingredients Storage")
     val pagerState = rememberPagerState(pageCount = { tabs.size })
     val coroutineScope = rememberCoroutineScope()
+    val configuration = LocalConfiguration.current
+    val isPortrait = configuration.screenHeightDp > configuration.screenWidthDp
 
-    // Initialize RestockViewModel with the database
     val restockViewModel: RestockViewModel = viewModel(
         factory = RestockViewModelFactory(database)
     )
@@ -44,34 +46,32 @@ fun Home(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        // Header Section with Logo
-        Row(
-            modifier = Modifier
-                .fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            // Header Text
-            Text(
-                text = "SweetBakes",
+        if (isPortrait) {
+            Row(
                 modifier = Modifier
-                    .padding(start = 8.dp),
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onSurface,
-                textAlign = TextAlign.Start,
-            )
-            // App Logo
-            Image(
-                painter = painterResource(id = R.drawable.applogo),
-                contentDescription = "App Logo",
-                modifier = Modifier
-                    .size(60.dp)
-                    .padding(start = 8.dp)
-                    .graphicsLayer(scaleX = -1f)
-            )
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "SweetBakes",
+                    modifier = Modifier
+                        .padding(start = 8.dp),
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    textAlign = TextAlign.Start,
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.applogo),
+                    contentDescription = "App Logo",
+                    modifier = Modifier
+                        .size(60.dp)
+                        .padding(start = 8.dp)
+                        .graphicsLayer(scaleX = -1f)
+                )
+            }
         }
 
-        // Tab Layout with Themed Indicator
         TabRow(
             selectedTabIndex = pagerState.currentPage,
             backgroundColor = MaterialTheme.colorScheme.background,
@@ -97,7 +97,6 @@ fun Home(
             }
         }
 
-        // Swipeable pages
         HorizontalPager(
             state = pagerState,
             modifier = Modifier.fillMaxSize()

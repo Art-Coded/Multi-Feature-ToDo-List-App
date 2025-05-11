@@ -101,7 +101,7 @@ fun BottomSheetUI(
             modifier = Modifier.fillMaxWidth()
         )
 
-        Divider(color = Color.Gray, thickness = 1.dp)
+        HorizontalDivider(thickness = 1.dp, color = Color.Gray)
 
         Text(
             text = context.getString(R.string.select_priority),
@@ -115,7 +115,7 @@ fun BottomSheetUI(
             PriorityCheckbox("High", selectedPriority, onPriorityChange)
         }
 
-        Divider(color = Color.Gray, thickness = 1.dp)
+        HorizontalDivider(thickness = 1.dp, color = Color.Gray)
 
         Box(
             modifier = Modifier
@@ -148,7 +148,7 @@ fun BottomSheetUI(
             }
         }
 
-        Divider(color = Color.Gray, thickness = 1.dp)
+        HorizontalDivider(thickness = 1.dp, color = Color.Gray)
 
         Box(
             modifier = Modifier
@@ -187,7 +187,7 @@ fun BottomSheetUI(
             }
         }
 
-        Divider(color = Color.Gray, thickness = 1.dp)
+        HorizontalDivider(thickness = 1.dp, color = Color.Gray)
 
         Button(
             onClick = {

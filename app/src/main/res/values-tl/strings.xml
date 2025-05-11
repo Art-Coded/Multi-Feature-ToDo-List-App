@@ -11,12 +11,12 @@
     //Home Dashboard
     <string name="dashboard_asof1">ang iyong progresso ay nasa </string>
     <string name="dashboard_asof2">% na pagkakumpleto!</string>
-    <string name="check_out">Tingnan ang iyong mga nakabinbing order dito sa </string>
+    <string name="check_out">Tingnan ang iyong mga nagawang order sa </string>
     <string name="view">Tingnan ang iyong natapos na Orders</string>
     <string name="expanded">Wala ka pang may natapos na Orders :D</string>
 
     //Home Ingredients Storage
-    <string name="search">Mag-search ng mga Ingredients...</string>
+    <string name="search">Mag-search Ingredients...</string>
     <string name="not_found">Walang Ingredients na nahanap para sa </string>
     <string name="no_ingredients">Wala ka pang may inilagay na Ingredients</string>
     <string name="name">Pangalan</string>

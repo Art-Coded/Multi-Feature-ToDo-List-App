@@ -11,12 +11,12 @@
     //Home Dashboard
     <string name="dashboard_asof1">an imo progresso kay ada na sa </string>
     <string name="dashboard_asof2">% nga pagkakumpleto!</string>
-    <string name="check_out">Pwede mo ig-check an imo mga gin himo nga orders didi sa </string>
+    <string name="check_out">Pwede mo ig-check an imo mga gin himo nga orders sa </string>
     <string name="view">Ig-check an imo natapos nga Orders</string>
     <string name="expanded">Waray ka pa may natapos na Orders :D</string>
 
     //Home Ingredients Storage
-    <string name="search">Mag-search mga Ingredients...</string>
+    <string name="search">Mag-search Ingredients...</string>
     <string name="not_found">Waray Ingredients nga nabilngan para sa </string>
     <string name="no_ingredients">Waray ka pa may gin butang na Ingredients</string>
     <string name="name">Ngaran</string>

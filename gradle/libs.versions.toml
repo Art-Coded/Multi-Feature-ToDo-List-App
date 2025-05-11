@@ -24,6 +24,7 @@ navigationCompose = "2.8.7"
 roomRuntime = "2.6.1"
 workRuntimeKtx = "2.10.0"
 workRuntimeKtxVersion = "2.7.1"
+firebaseCrashlyticsBuildtools = "3.0.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -60,6 +61,7 @@ lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "
 lottie-compose-v630 = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieComposeVersion" }
 material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workRuntimeKtx" }
+firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
