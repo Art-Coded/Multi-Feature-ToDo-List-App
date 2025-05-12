@@ -35,7 +35,7 @@ object NotificationUtils {
         notificationId: Int
     ) {
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.icon)
+            .setSmallIcon(R.drawable.applogo)
             .setContentTitle("Reminder for your pending To-Do: '$title'!")
             .setContentText(description)
             .setPriority(NotificationCompat.PRIORITY_HIGH)

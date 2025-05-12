@@ -34,14 +34,16 @@ object OrderNotificationUtils {
         description: String,
         notificationId: Int
     ) {
-        val builder = NotificationCompat.Builder(context, CHANNEL_ID)
+        val appContext = context.applicationContext
+
+        val builder = NotificationCompat.Builder(appContext, CHANNEL_ID)
             .setSmallIcon(R.drawable.applogo)
             .setContentTitle("Reminder! Don't forget about the pending order: '$title'!")
             .setContentText(description)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
 
-        with(NotificationManagerCompat.from(context)) {
+        with(NotificationManagerCompat.from(appContext)) {
             notify(notificationId, builder.build())
         }
     }

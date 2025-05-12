@@ -37,13 +37,6 @@ object LocaleHelper {
         return context
     }
 
-    // Use this for date/time pickers to ensure they always use English
-    fun getBaseContextForPickers(context: Context): Context {
-        val baseConfig = Configuration(context.resources.configuration)
-        baseConfig.setLocale(Locale.ENGLISH) // Force English for pickers
-        return context.createConfigurationContext(baseConfig)
-    }
-
     private fun persistLanguage(context: Context, language: String) {
         PreferenceManager.getDefaultSharedPreferences(context)
             .edit()

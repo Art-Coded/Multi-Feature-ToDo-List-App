@@ -41,7 +41,7 @@
     <string name="middletext">You dont have any remidners saved yet. Nice!</string>
     <string name="confirm_deletion">Confirm Deletion</string>
     <string name="delete_confirmation">Are you sure you want to Delete "%1$s"?</string>
-    <string name="remind_me">Remind me at: </string>
+    <string name="remind_me">Remind me at </string>
 
     //AddToDo.kt
     <string name="edit_todo">Edit To-Do</string>
@@ -55,8 +55,6 @@
     <string name="language">Language</string>
     <string name="selected_language">Selected Language</string>
     <string name="choose_language">Choose Language</string>
-
-
 
 
 </resources>

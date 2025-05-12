@@ -7,6 +7,7 @@ import androidx.work.*
 import com.example.sweetbakes.data.AppDatabase
 import com.example.sweetbakes.model.SettingsEntity
 import com.example.sweetbakes.ToDo.NotificationUtils
+import com.example.sweetbakes.utils.OrderNotificationUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,7 +20,8 @@ class SweetBakesApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        LocaleHelper.onAttach(this)
+        val contextWithLocale = LocaleHelper.onAttach(this)
+        OrderNotificationUtils.createNotificationChannel(contextWithLocale)
         scheduleMidnightCleanup()
         initializeDefaultSettings()
         initializeNotifications()
@@ -31,7 +33,9 @@ class SweetBakesApplication : Application() {
     }
 
     private fun initializeNotifications() {
-        NotificationUtils.createNotificationChannel(this)
+        val contextWithLocale = LocaleHelper.onAttach(this)
+        OrderNotificationUtils.createNotificationChannel(contextWithLocale)
+        NotificationUtils.createNotificationChannel(contextWithLocale)
     }
 
     private fun initializeDefaultSettings() {
@@ -72,6 +76,10 @@ class SweetBakesApplication : Application() {
         }
         return calendar.timeInMillis - System.currentTimeMillis()
     }
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(LocaleHelper.onAttach(base))
+    }
 }
 
 class MidnightCleanupWorker(
@@ -84,4 +92,5 @@ class MidnightCleanupWorker(
         database.orderStatesDao().clearAllStates()
         return Result.success()
     }
+
 }

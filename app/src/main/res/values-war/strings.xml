@@ -41,7 +41,7 @@
     <string name="middletext">Waray ka pa may gin save na reminders sa yana. Nice!</string>
     <string name="confirm_deletion">Kumpirmaha an pag Delete</string>
     <string name="delete_confirmation">Karuyag mo i-Delete an "%1$s"?</string>
-    <string name="remind_me">Hinumdumi ak sa: </string>
+    <string name="remind_me">Hinumdumi ak sa </string>
 
     //AddToDo.kt
     <string name="edit_todo">Bag-uhon an Hirimuon</string>
@@ -55,4 +55,5 @@
     <string name="language">Lingguahe</string>
     <string name="selected_language">Gin pili nga Lingguahe</string>
     <string name="choose_language">Pag pili lingguahe</string>
+
 </resources>

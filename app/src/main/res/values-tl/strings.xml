@@ -41,7 +41,7 @@
     <string name="middletext">Wala ka pang may na-saved na reminders sa ngayon. Nice!</string>
     <string name="confirm_deletion">Kumpirmahin ang pag Delete</string>
     <string name="delete_confirmation">Gusto mong Burahin ang "%1$s"?</string>
-    <string name="remind_me">Paalala mo sa akin sa: </string>
+    <string name="remind_me">Paalala mo sa akin sa </string>
 
     //AddToDo.kt
     <string name="edit_todo">Baguhin ang Gawain</string>
@@ -55,6 +55,7 @@
     <string name="language">Wika</string>
     <string name="selected_language">Napiling Wika</string>
     <string name="choose_language">Pumili ng Wika</string>
+
 
 
 </resources>

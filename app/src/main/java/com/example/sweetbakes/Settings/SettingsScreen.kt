@@ -28,7 +28,6 @@ fun SettingsScreen(
     val context = LocalContext.current
     var languageUpdateKey by remember { mutableStateOf(0) }
 
-    // Language options list
     val languages = listOf("English", "Tagalog", "Waraynon")
 
     Column(
