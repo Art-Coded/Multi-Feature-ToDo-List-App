@@ -77,7 +77,7 @@ fun DashboardUI(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(500.dp)
+                .animateContentSize()
                 .shadow(4.dp, shape = RoundedCornerShape(12.dp))
                 .background(MaterialTheme.colorScheme.surface),
             contentAlignment = Alignment.Center
@@ -162,13 +162,10 @@ fun DashboardUI(
                         Spacer(modifier = Modifier.width(8.dp))
 
                         Text(
-                            text = context.getString(R.string.check_out) + " Orders tab!",
+                            text = context.getString(R.string.check_out),
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Medium,
-                            color = MaterialTheme.colorScheme.onSurface,
-                            modifier = Modifier.clickable {
-                                onNavigateToOrders()
-                            }
+                            color = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 }

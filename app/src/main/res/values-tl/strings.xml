@@ -11,7 +11,7 @@
     //Home Dashboard
     <string name="dashboard_asof1">ang iyong progresso ay nasa </string>
     <string name="dashboard_asof2">% na pagkakumpleto!</string>
-    <string name="check_out">Tingnan ang iyong nagawang order sa </string>
+    <string name="check_out">Pwede mong tingnan ang iyong nagawang order sa Orders tab!</string>
     <string name="view">Tingnan ang iyong natapos na Orders</string>
     <string name="expanded">Wala ka pang may natapos na Orders :D</string>
 

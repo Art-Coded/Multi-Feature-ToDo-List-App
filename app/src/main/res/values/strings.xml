@@ -11,7 +11,7 @@
     //Home Dashboard
     <string name="dashboard_asof1">your progress is currently at </string>
     <string name="dashboard_asof2">% completeness!</string>
-    <string name="check_out">Check out your pending orders in </string>
+    <string name="check_out">Check out your pending orders in Orders tab!</string>
     <string name="view">View Completed Orders</string>
     <string name="expanded">No Orders checked :D</string>
 

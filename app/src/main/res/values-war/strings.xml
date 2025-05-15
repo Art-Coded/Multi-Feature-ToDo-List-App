@@ -11,7 +11,7 @@
     //Home Dashboard
     <string name="dashboard_asof1">an imo progresso kay ada na sa </string>
     <string name="dashboard_asof2">% nga pagkakumpleto!</string>
-    <string name="check_out">Pwede mo ig-check an imo gin himo nga orders sa </string>
+    <string name="check_out">Pwede mo ig-check an imo gin himo nga orders sa Orders tab!</string>
     <string name="view">Ig-check an imo natapos nga Orders</string>
     <string name="expanded">Waray ka pa may natapos na Orders :D</string>
 
