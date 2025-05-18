@@ -1,6 +1,6 @@
 # SweetBakes - Multi-Feature To-Do list Android App!
 
-A native Android app built with Kotlin and Jetpack Compose created by Art Lyndone Hemplo.
+A native Android app built with Kotlin and Jetpack Compose created by Art-Coded.
 
 ## Features
 - Home Dashboard
